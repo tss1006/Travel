@@ -41,7 +41,9 @@
 
     .wrapper {
         width: 100%;
-        height: 31.25vw;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 37.08%;
     }
 
     .wrapper .swipper-img {
