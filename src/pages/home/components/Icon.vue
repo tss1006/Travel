@@ -1,42 +1,17 @@
 <template>
     <div class="icons">
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
-        </div>
-        <div class="icon">
-            <img src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
-            <p>热门景点</p>
+        <div class="icon" v-for="item of icon" :id='item.id'>
+            <img :src=item.imgUrl>
+            <p>{{item.desc}}</p>
         </div>
     </div>
 </template>
 <script>
     export default {
-        name: "HomeIcon"
+        name: "HomeIcon",
+        props:{
+            icon:Array
+        }
     }
 </script>
 <style scoped>
