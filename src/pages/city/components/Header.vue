@@ -5,12 +5,8 @@
            <div class="header-left">
             <div class="iconfont back-icon">&#xe624;</div>
         </div> 
-        </router-link>
-        
+        </router-link>       
     </div>
-
-    </div>
-
 </template>
 
 <script>
