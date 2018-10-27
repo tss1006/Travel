@@ -29,12 +29,13 @@ export default{
       SwipperList:[],
       iconList:[],
       recommendList:[],
-      weekendList:[]
+      weekendList:[],
+      lastCity:''
     }
   },
   methods:{
     getHomeInfo(){
-      axios.get('/static/mock/index.json')
+      axios.get('/static/mock/index.json?city='+this.$store.state.city)
       .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc(res){
@@ -49,6 +50,13 @@ export default{
   },
   mounted(){
      this.getHomeInfo();
+     this.lastCity=this.$store.state.city;
+  },
+  activated(){
+    if(this.lastCity!==this.$store.state.city){
+      this.lastCity=this.$store.state.city;
+      this.getHomeInfo();
+    }
   }
 }
 </script>
