@@ -4,16 +4,16 @@
             <div class="area">
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
-                    <div class="button-wrap">
-                        <div class="button">北京</div>
+                    <div class="button-wrap" >
+                        <div class="button" @click='handle'>{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrap" v-for="item of hotcity" :key="item.id">
-                        <div class="button">{{item.name}}</div>
+                    <div class="button-wrap" v-for="item of hotcity" :key="item.id" @click='handleCityClick(item.name)'>
+                        <div class="button" >{{item.name}}</div>
                     </div>
                 </div>
                 <div class="area" 
@@ -23,7 +23,7 @@
                      >
                     <div class="title border-topbottom">{{key}}</div>
                     <div class="item-list">
-                        <div class="item border-bottom" v-for="item of value" :key="item.id">{{item.name}}</div>
+                        <div class="item border-bottom" v-for="item of value" @click='handleCityClick(item.name)':key="item.id">{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -45,13 +45,21 @@
         mounted() {
             this.scroll = new BScroll(this.$refs.wrapper);
         },
+        methods:{
+            handleCityClick(city){
+             this.$store.commit('changeCity',city);
+             this.$router.push('/');
+            },
+            handle(){
+                this.$router.push('/');
+            }
+        },
         watch:{
             alphabet(){
                 if(this.alphabet){
                     const element=this.$refs[this.alphabet][0];
                     this.scroll.scrollToElement(element);
                 }
-                
             }
         }
     }
