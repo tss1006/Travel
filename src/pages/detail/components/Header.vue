@@ -45,6 +45,9 @@
         },
         activated(){
             window.addEventListener('scroll',this.hanleScroll);
+        },
+        deactivated(){
+            window.removeEventListener('scroll',this.hanleScroll);
         }
     }
 </script>
