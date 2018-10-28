@@ -5,7 +5,7 @@
           <div class="iconfont back-icon">&#xe624;</div>
         </div>
         <div class="header-input">
-          <span class="iconfont search-icon">&#xe681;</span>
+          <span class="iconfont search-icon">&#xe60d;</span>
           输入城市/景点/游玩主题
         </div>
         <router-link to='/city'>
@@ -48,7 +48,7 @@ export default {
     color: #ccc
     .search-icon
      text-align:center
-     font-size: .5rem
+     font-size: .3rem
   .header-right
     min-width: 1.04rem
     padding: 0 .1rem
