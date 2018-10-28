@@ -68,6 +68,7 @@
         color: #fff;
     }
     .header-fixed {
+        z-index:9;
         position: fixed;
         left: 0;
         top: 0;
