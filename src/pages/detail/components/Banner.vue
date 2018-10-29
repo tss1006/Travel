@@ -1,8 +1,7 @@
 <template>
     <div>
         <div class="banner" @click="bannerHandleClick">
-            <img :src="bannerImg"
-                class="banner-img">
+            <img :src="bannerImg" class="banner-img">
             <div class="banner-info">
                 <div class="banner-title">
                     {{sightName}}
@@ -12,35 +11,39 @@
                 </div>
             </div>
         </div>
-        <common-gallery :imgs="imgs" v-show="showGallery" @close="closeGalleryHandle"></common-gallery>
+        <fade-animation>
+            <common-gallery :imgs="imgs" v-show="showGallery" @close="closeGalleryHandle"></common-gallery>
+        </fade-animation>
     </div>
 
 </template>
 
 <script>
     import CommonGallery from 'common/Gallery/Gallery'
+    import FadeAnimation from 'common/fade/Fade'
     export default {
         name: 'Banner',
-        props:{
-            imgs:Array,
-            sightName:String,
-            bannerImg:String
+        props: {
+            imgs: Array,
+            sightName: String,
+            bannerImg: String
         },
-        data(){
-            return{
-                showGallery:false
+        data() {
+            return {
+                showGallery: false
             }
         },
-        methods:{
-            bannerHandleClick(){
-              this.showGallery=true;
+        methods: {
+            bannerHandleClick() {
+                this.showGallery = true;
             },
-            closeGalleryHandle(){
-                this.showGallery=false;
+            closeGalleryHandle() {
+                this.showGallery = false;
             }
         },
         components: {
-            CommonGallery
+            CommonGallery,
+            FadeAnimation
         }
     }
 </script>
